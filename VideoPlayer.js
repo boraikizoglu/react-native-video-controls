@@ -677,9 +677,15 @@ export default class VideoPlayer extends Component {
      */
     UNSAFE_componentWillReceiveProps(nextProps) {
         if (this.state.paused !== nextProps.paused ) {
-            this.setState({
-                paused: nextProps.paused
-            })
+            this.setState({paused: nextProps.paused})
+        }
+
+        if (this.state.resizeMode !== nextProps.resizeMode) {
+            this.setState({resizeMode: nextProps.resizeMode})
+        }
+
+        if (this.state.isFullscreen !== nextProps.isFullscreen) {
+            this.setState({isFullscreen: nextProps.isFullscreen})
         }
 
         if(this.styles.videoStyle !== nextProps.videoStyle){
